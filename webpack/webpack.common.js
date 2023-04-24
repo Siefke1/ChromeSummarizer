@@ -7,7 +7,7 @@ const srcDir = path.join(__dirname, "..", "src");
 module.exports = {
     entry: {
       menu: path.join(srcDir, 'menu.tsx'),
-      selectListener: path.join(srcDir, 'selectListener.ts'),
+      background: path.join(srcDir, 'background.ts'),
       contentScript: path.join(srcDir, 'contentScript.tsx'),
     },
     output: {
@@ -18,7 +18,7 @@ module.exports = {
         splitChunks: {
             name: "vendor",
             chunks(chunk) {
-              return chunk.name !== 'selectListener';
+              return chunk.name !== 'background';
             }
         },
     },
