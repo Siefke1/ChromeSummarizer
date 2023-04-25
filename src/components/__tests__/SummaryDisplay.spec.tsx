@@ -39,7 +39,6 @@ describe("SummaryDisplay", () => {
     expect(onSaveMock).toHaveBeenCalledTimes(1);
   });
 
-  // This test assumes the clipboard API is supported in your test environment
   it("copies the summary text to the clipboard when the copy icon is clicked", () => {
     Object.defineProperty(navigator, "clipboard", {
         value: {

@@ -1,4 +1,3 @@
-// SummaryDropdown.tsx
 import React, { FC, useState, useContext } from "react";
 import {
   Typography,

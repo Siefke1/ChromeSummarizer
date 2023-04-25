@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Configuration, OpenAIApi, CreateChatCompletionResponse } from "openai";
+import { CreateChatCompletionResponse } from "openai";
 import { getUrl } from "./chromeUtils";
 
 const BACKEND_URL = process.env.BACKEND_URL || "http://localhost:3000";
@@ -12,7 +12,6 @@ export type Summary = {
   tags?: string[];
 };
 
-// This is to call the backend API
 export const fetchNewSummary = async (
   chosenText: string
 ): Promise<CreateChatCompletionResponse> => {
@@ -46,7 +45,7 @@ export const saveSummary = async (
 
   try {
     const response = await axios.post(
-      "http://localhost:3000/summaries",
+      `${BACKEND_URL}/summaries`,
       summaryObject
     );
 
