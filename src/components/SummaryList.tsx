@@ -36,7 +36,7 @@ const SummaryList: FC<SummaryListProps> = ({ data, onBack }) => {
                 <Box>
                   {summary.tags?.map((tag, i) => (
                     <Chip
-                      key={i}
+                      key={i + 1}
                       label={tag}
                       sx={{ marginRight: 1, marginBottom: 1 }}
                     />
